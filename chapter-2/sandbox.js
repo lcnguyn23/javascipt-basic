@@ -212,3 +212,190 @@ let score = "100";
 // let result8 = Boolean(0); // boolean
 // let result8 = Boolean('2'); // boolean
 // console.log(result8, typeof result8);
+
+// for loop
+
+// for (let i = 0; i < 5; i++) {
+//   console.log("in loop:", i);
+// }
+// console.log("loop finished");
+
+const names2 = ["shaun", "mario", "luuighe"];
+// for (let i = 0; i < names2.length; i++) {
+//   // console.log(names2[i]);
+//   let html = `<div>${names2[i]}</div>`;
+//   console.log(html);
+// }
+
+// while loop
+//let i = 0;
+// while (i < 5) {
+//   console.log("in loop: ", i);
+//   i++;
+// }
+// while (i < names2.length) {
+//   console.log(names2[i]);
+//   i++;
+// }
+
+// do .. while loop
+// let i = 1;
+// do {
+//   console.log("in loop: ", i);
+//   i++;
+// } while (i < 5);
+
+// if statement
+// const age3 = 20;
+
+// if (age3 >= 20) {
+//   console.log("your are 20 yrd");
+// }
+
+// const ninjas2 = ["shaun", "ryu", "chun-li", "yoshi"];
+
+// if (ninjas2.length > 3) {
+//   console.log("that's a lot of ninjas");
+// }
+
+// const password = "pass2222";
+
+// if (password.length >= 8) {
+//   console.log("that password is long enough");
+// }
+
+console.log("------------------------");
+// else if statement
+// const password = "s@23";
+
+// if (password.length >= 12 && password.includes("@")) {
+//   console.log("that password is might strong");
+// } else if (
+//   password.length >= 8 ||
+//   (password.includes("@") && password.length >= 5)
+// ) {
+//   console.log("that password is long enough");
+// } else {
+//   console.log("that password is not long enough");
+// }
+
+// logical NOT (!)
+// let user = false;
+
+// if (!user) {
+//   console.log("u are in");
+// }
+
+// console.log(!true);
+// console.log(!false);
+
+// break and continue
+// const scores = [50, 25, 0, 30, 100, 20, 10];
+// for (let i = 0; i < scores.length; i++) {
+//   if (scores[i] === 0) {
+//     continue; // bo qua
+//   }
+//   console.log("your score is: ", scores[i]);
+//   if (scores[i] === 100) {
+//     console.log("congratsm u got top score");
+//     break; // dung lai tai day
+//   }
+// }
+
+// switch statement
+const grade = "D";
+
+switch (grade) {
+  case "A":
+    console.log(`Your grade is: ${grade}`);
+    break;
+  case "B":
+    console.log(`Your grade is: ${grade}`);
+    break;
+  case "C":
+    console.log(`Your grade is: ${grade}`);
+    break;
+  case "D":
+    console.log(`Your grade is: ${grade}`);
+    break;
+  case "E":
+    console.log(`Your grade is: ${grade}`);
+    break;
+  default:
+    console.log(`Not a valid grade`);
+}
+
+// variables & block scope
+const age4 = 35;
+if (true) {
+  const age4 = 40;
+  let name = "shuan";
+  console.log("inside 1st code block: ", age4, name);
+
+  if (true) {
+    let age4 = 50;
+    let name = "ren";
+    console.log("inside 2nd code block: ", age4, name);
+  }
+}
+console.log("outside code block: ", age4);
+
+////////////////////////////////////////////
+// function declaration
+function greet() {
+  console.log("Hello there!");
+}
+
+// function expression
+const speak = function (name = "ken", time = "evenning") {
+  console.log(`good ${time}, ${name}`);
+};
+
+greet();
+greet();
+greet();
+
+speak("shuan");
+speak();
+
+// returning value in function
+// const calcArea = function (radius) {
+//   return 3.14 * radius ** 2;
+// };
+
+// arrow function
+
+// const calcArea = (radius, something) => {
+//   return 3.14 * radius ** 2;
+// };
+
+const calcArea = (radius) => 3.14 * radius ** 2;
+
+console.log(calcArea(4));
+
+// practise arrow function
+const greet2 = function () {
+  return "hello world";
+};
+
+const greet3 = () => "hello world";
+const res = greet3();
+console.log(res);
+
+const bill = function (product, tax) {
+  let total = 0;
+  for (let i = 0; i < product.length; i++) {
+    total += product[i] + product[i] * tax;
+  }
+  return total;
+};
+
+const bill2 = (product, tax) => {
+  let total = 0;
+  for (let i = 0; i < product.length; i++) {
+    total += product[i] + product[i] * tax;
+  }
+  return total;
+};
+
+console.log(bill2([10, 15, 20], 0.2));

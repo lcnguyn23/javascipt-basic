@@ -427,7 +427,7 @@ myFunc((value) => {
   console.log(value);
 });
 
-let people = ["mario", "luigi", "ryu", "shuan", "chun-li"];
+const people = ["mario", "luigi", "ryu", "shuan", "chun-li"];
 
 const logPerson = (person, index) => {
   console.log(`${index} - hello ${person}`);
@@ -446,3 +446,81 @@ people.forEach(logPerson);
 /////
 // get a reference to the 'ul'
 const ul = document.querySelector(".people");
+
+let html = ``;
+
+people.forEach((person) => {
+  // create html template
+  html += `<li style="color: purple">${person}</li>`;
+});
+
+console.log(html);
+
+ul.innerHTML = html;
+
+///////////////////
+// object literals
+// const blogs = [
+//   { title: "why mac $ cheese rules", likes: 30 },
+//   { title: "10 things to make with marmite", likes: 50 },
+// ];
+
+// console.log(blogs);
+
+let user = {
+  name: "crystal",
+  age: 30,
+  email: "crystal@thehudoj.co.uk",
+  location: "berlin",
+  blogs: [
+    { title: "why mac $ cheese rules", likes: 30 },
+    { title: "10 things to make with marmite", likes: 50 },
+  ],
+  login() {
+    console.log("the user logged in");
+  },
+  logout() {
+    console.log("the user logged out");
+  },
+  logBlogs() {
+    //console.log(this.blogs);
+    console.log("this user has written the following blog:");
+    this.blogs.forEach((blog) => {
+      console.log(blog.title, blog.likes);
+    });
+  },
+};
+
+// console.log(user);
+// console.log(user.name);
+
+// //user.age = 35;
+// console.log(user.age);
+// //console.log(user);
+// console.log(user["location"]);
+// user["name"] = "chun-li";
+// console.log(user["name"]);
+// console.log(typeof user);
+
+// user.login();
+// user.logout();
+// const pName = "mario";
+// pName.toUpperCase();
+
+// user.logBlogs();
+
+////////
+// Math object
+console.log(Math);
+console.log(Math.PI);
+console.log(Math.E);
+
+const area = 5.3;
+console.log(Math.round(area)); // 7.7 -> 8, 7.1 -> 7, 5.3 -> 5
+console.log(Math.floor(area)); // 7.7 -> 7, 7.1 -> 7, 5.3 -> 5
+console.log(Math.ceil(area)); // 7.7 -> 8, 7.1 -> 8, 5.3 -> 6
+console.log(Math.trunc(area)); // 5.3 -> 5
+
+// random numbers
+const random1 = Math.random();
+console.log(Math.round(random1 * 100));

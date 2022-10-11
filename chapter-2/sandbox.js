@@ -399,3 +399,50 @@ const bill2 = (product, tax) => {
 };
 
 console.log(bill2([10, 15, 20], 0.2));
+
+//////
+const name2 = "shaun";
+// functions
+const greet4 = () => "hello";
+let resultOne = greet4();
+console.log(resultOne);
+
+// methods
+
+let resultTwo = name2.toUpperCase();
+console.log(resultTwo);
+
+/////////
+// callbacks & foreach
+const myFunc = (callbackFunc) => {
+  let value = 50;
+  callbackFunc(value);
+};
+
+// myFunc(function (value) {
+//   console.log(value);
+// });
+
+myFunc((value) => {
+  console.log(value);
+});
+
+let people = ["mario", "luigi", "ryu", "shuan", "chun-li"];
+
+const logPerson = (person, index) => {
+  console.log(`${index} - hello ${person}`);
+};
+
+// people.forEach(function (person) {
+//   console.log(person);
+// });
+
+// people.forEach((person, index) => {
+//   console.log(index, person);
+// });
+
+people.forEach(logPerson);
+
+/////
+// get a reference to the 'ul'
+const ul = document.querySelector(".people");

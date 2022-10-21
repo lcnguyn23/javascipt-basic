@@ -74,16 +74,66 @@
 // content.classList.remove("error");
 // content.classList.add("success");
 
-const paras = document.querySelectorAll("p");
-paras.forEach((p) => {
-  // console.log(p.textContent); // textContent , innerText
-  if (p.textContent.includes("error")) {
-    p.classList.add("error");
-  }
-  if (p.innerText.includes("success")) {
-    p.classList.add("success");
-  }
+// const paras = document.querySelectorAll("p");
+// paras.forEach((p) => {
+//   // console.log(p.textContent); // textContent , innerText
+//   if (p.textContent.includes("error")) {
+//     p.classList.add("error");
+//   }
+//   if (p.innerText.includes("success")) {
+//     p.classList.add("success");
+//   }
+// });
+
+// const title = document.querySelector(".title");
+// title.classList.toggle("test");
+
+// const article = document.querySelector("article");
+// console.log(article.children);
+// console.log(Array.from(article.children));
+
+// Array.from(article.children).forEach((child) => {
+//   child.classList.add("article-element");
+// });
+
+// const title = document.querySelector("h2");
+// console.log(title.parentElement);
+// console.log(title.parentElement.parentElement);
+// console.log(title.previousElementSibling);
+
+// // chaining
+// console.log(title.nextElementSibling.parentElement.children);
+
+//// EVENT BASICS ////
+
+// const button = document.querySelector("button");
+
+// button.addEventListener("click", () => {
+//   console.log("you clicked me");
+// });
+
+const ul = document.querySelector("ul");
+// ul.remove();
+
+const button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+  const li = document.createElement("li");
+  li.textContent = "something new to do";
+  // ul.innerHTML += '<li>something new</li>'
+  // ul.append(li);
+  // ul.prepend(li);
 });
 
-const title = document.querySelector(".title");
-title.classList.toggle("test");
+const items = document.querySelectorAll("li");
+
+items.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    // console.log("item clicked");
+    // console.log(e);
+    // console.log(e.target);
+    // console.log(item);
+    // e.target.style.textDecoration = "line-through";
+    e.target.remove();
+  });
+});

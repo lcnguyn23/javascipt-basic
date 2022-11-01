@@ -147,21 +147,69 @@
 //   }
 // });
 
-const copy = document.querySelector(".copy-me");
+// const copy = document.querySelector(".copy-me");
 
-copy.addEventListener("copy", () => {
-  console.log("OI! my content is copyright");
-});
+// copy.addEventListener("copy", () => {
+//   console.log("OI! my content is copyright");
+// });
 
-const box = document.querySelector(".box");
+// const box = document.querySelector(".box");
 
-box.addEventListener("mousemove", (e) => {
-  // console.log(e);
-  // console.log(e.offsetX, e.offsetY);
-  box.textContent = `x pos -${e.offsetX} y pos - ${e.offsetY}`;
-});
+// box.addEventListener("mousemove", (e) => {
+//   // console.log(e);
+//   // console.log(e.offsetX, e.offsetY);
+//   box.textContent = `x pos -${e.offsetX} y pos - ${e.offsetY}`;
+// });
 
 // document.addEventListener("wheel", (e) => {
 //   console.log(e.pageX, e.pageY);
 // });
 
+// Form Event
+const form = document.querySelector(".signup-form");
+// const username = document.querySelector("#username");
+const feedback = document.querySelector(".feedback");
+const usernamePattern = /^[a-zA-Z0-9]{6,12}$/;
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  // console.log(username.value);
+  // console.log(form.username.value);
+
+  // validation
+  const username = form.username.value;
+
+  if (usernamePattern.test(username)) {
+    // feedback goof info
+    feedback.textContent = "that username is valid!";
+  } else {
+    // feedback help info
+    feedback.textContent =
+      "username must contain letters only & be between 6 & 12 characters long!";
+  }
+});
+
+// live feedback
+form.addEventListener("keyup", (e) => {
+  // console.log(e.target.value, form.username.value)
+  if (usernamePattern.test(e.target.value)) {
+    form.username.setAttribute("class", "success");
+  } else {
+    form.username.setAttribute("class", "error");
+  }
+});
+
+// testing RegEx
+// const username = "shassun";
+// const pattern = /^[a-z]{6,}$/;
+
+// let result = pattern.test(username);
+
+// if (result) {
+//   console.log("regex test pass");
+// } else {
+//   console.log("regex test failed");
+// }
+
+// let result = username.search(pattern);
+
+// console.log(result);
